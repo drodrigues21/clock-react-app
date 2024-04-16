@@ -1,23 +1,66 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react";
+import MoreLessBtn from './componants/MoreLessBtn';
+import Quote from './componants/Quote';
+import Time from './componants/Time';
 import './App.css';
+import More from "./componants/More";
 
 function App() {
+
+  const [quotes, setQuotes] = useState([])
+  const [date, setDate] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
+
+  useEffect(() => {
+    fetch('https://api.quotable.io/quotes/random')
+      .then(res => res.json())
+      .then(json => {
+        setQuotes(json)
+        setIsLoading(false)
+      })
+
+  }, [])
+
+  useEffect(() => {
+    fetch('http://worldtimeapi.org/api/ip')
+      .then(res => res.json())
+      .then(json => {
+        setDate(json)
+        setIsLoading(false)
+      })
+  }, [])
+
+  const handleClick = () => {
+    fetch('https://api.quotable.io/quotes/random')
+      .then(res => res.json())
+      .then(json => setQuotes(json))
+  }
+
+
+  const handleMore = () => {
+    const container = document.querySelector('.container')
+    container.classList.toggle('showMore')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="img-filter">
+        <div className="container">
+          <div className="content-container">
+            <div className="left-wrap">
+              <Quote quotes={quotes} isLoading={isLoading} handleClick={handleClick} />
+              <Time date={date} />
+            </div>
+            <div className="right-wrap">
+              <MoreLessBtn handleMore={handleMore} />
+            </div>
+          </div>
+          <div className="more-container">
+            <More />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

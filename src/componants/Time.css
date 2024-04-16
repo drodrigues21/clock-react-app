@@ -1,0 +1,35 @@
+.greeting {
+   display: flex;
+   gap: 1rem;
+}
+
+.greeting h3 {
+   font-size: 15px;
+   font-weight: 400;
+   text-transform: uppercase;
+   line-height: 25px;
+   letter-spacing: 3px;
+   margin: 0;
+}
+
+.time h1 {
+   font-size: 100px;
+   line-height: 100px;
+   letter-spacing: -2.5px;
+   margin: 1.25rem 0;
+}
+
+.time span {
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 28px;
+   letter-spacing: 0px;
+   text-transform: uppercase;
+}
+
+.location h2 {
+   font-size: 15px;
+   line-height: 28px;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+}

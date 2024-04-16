@@ -1,38 +1,49 @@
 .App {
-  text-align: center;
+   height: 100vh;
+   background: #ff7a7a;
+   background-image: url('../public/assets/mobile/bg-image-nighttime.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.img-filter {
+   background-color: hsla(0, 0%, 0%, 0.45);
+   /* border: 4px solid rgb(0, 38, 255); */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+   max-width: 415px;
+   height: 100vh;
+   padding: 2rem 1.5rem;
+
+
+   margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container.showMore {
+   transform: translateY(-17rem);
 }
 
-.App-link {
-  color: #61dafb;
+.content-container {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.left-wrap {
+   display: flex;
+   flex-direction: column;
+   gap: 14rem;
+}
+
+
+.more-container {
+   height: 17rem;
+   background-color: hsla(0, 0%, 0%, 0.7);
+   backdrop-filter: blur(10px);
+   margin: -2rem -1.5rem;
+   padding: 2rem;
 }

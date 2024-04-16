@@ -1,0 +1,22 @@
+.quote-container {
+   display: flex;
+   justify-content: space-between;
+   gap: 1rem;
+   margin-top: -6rem;
+}
+
+.quote p {
+   font-size: 12px;
+   line-height: 22px;
+   margin: 0;
+}
+
+.quote h5 {
+   font-size: 12px;
+   line-height: 22px;
+   margin: 1rem 0;
+}
+
+.get-new-quote {
+   cursor: pointer;
+}
