@@ -1,4 +1,3 @@
-import More from './More'
 import './MoreLessBtn.css'
 
 export default function MoreLessBtn({ handleMore }) {

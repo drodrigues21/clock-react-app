@@ -45,6 +45,9 @@ export default function Time({ date }) {
       timeOfDay = "Good evening"
    }
 
+
+   console.log(location);
+
    return (
       <div className="time-container">
          <div className="greeting">

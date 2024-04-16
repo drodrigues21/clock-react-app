@@ -1,10 +1,6 @@
-import { useState, useEffect } from "react"
 import './Quote.css'
 
 export default function Quote({ quotes, isLoading, handleClick }) {
-
-   // const [url, setUrl] = useState('https://api.quotable.io/quotes/random')
-   // const [quotes, setQuotes] = useState([])
 
    return (
       <div className="quote-container">
@@ -23,4 +19,5 @@ export default function Quote({ quotes, isLoading, handleClick }) {
          </div>
       </div >
    )
+
 }
