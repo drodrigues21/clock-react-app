@@ -1,11 +1,18 @@
+import { useFetch } from '../hooks/useFetch'
 import './Quote.css'
 
-export default function Quote({ quotes, isLoading, handleClick }) {
+export default function Quote() {
+
+   const { data: quotes, isPending } = useFetch('https://api.quotable.io/quotes/random')
+
+   const handleClick = () => {
+      console.log('!TODO: HANDLE CLICK EVENT FOR NEW QUOTE')
+   }
 
    return (
       <div className="quote-container">
          <div className="quote">
-            {isLoading ? ("Loading...") : quotes && quotes.map(quote => (
+            {isPending ? ("Loading...") : quotes && quotes.map(quote => (
                <div key={quote._id}>
                   <p>{quote.content}</p>
                   <h5>{quote.author}</h5>
