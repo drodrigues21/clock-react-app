@@ -4,7 +4,7 @@ import './Time.css'
 export default function Time({ date }) {
 
    const [location, setLocation] = useState({})
-   // const [isLoading, setIsLoading] = useState(true)
+   const [isLoading, setIsLoading] = useState(true)
    const [city, setCity] = useState('')
    const [country, setCountry] = useState('')
 
@@ -21,6 +21,7 @@ export default function Time({ date }) {
                setLocation(json)
                setCity(json.data.location.city.name)
                setCountry(json.data.location.country.alpha2)
+               setIsLoading(false)
             })
       }
 
@@ -54,10 +55,10 @@ export default function Time({ date }) {
             <h3>{timeOfDay}</h3>
          </div>
          <div className="time">
-            {date && <h1>{hour}:{minutes}</h1>}
+            {isLoading ? ("Loading...") : <h1>{hour}:{minutes}</h1>}
          </div>
          <div className="location">
-            {date && <h2>In {city}, {country}</h2>}
+            {isLoading ? ("Loading...") : <h2>In {city}, {country}</h2>}
          </div>
       </div>
    )
