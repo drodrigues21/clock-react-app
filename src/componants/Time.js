@@ -8,13 +8,14 @@ export default function Time({ date }) {
    const [city, setCity] = useState('')
    const [country, setCountry] = useState('')
 
+   console.log(location);
+
    const myDate = new Date(date.unixtime * 1000)
    const hour = myDate.getHours()
    const minutes = myDate.getMinutes()
 
    useEffect(() => {
-
-      if (date.length === undefined) {
+      if (date.client_ip !== undefined) {
          fetch(`https://api.ipbase.com/v2/info?apikey=ipb_live_Z5lxrhgX5YKUDb8VEWwp9YFOhIB61KzXNJczvliK&ip=${date.client_ip}`)
             .then(res => res.json())
             .then(json => {
@@ -25,7 +26,7 @@ export default function Time({ date }) {
             })
       }
 
-   }, [date])
+   }, [date.client_ip])
 
    let iconSrc = ''
 
@@ -45,8 +46,6 @@ export default function Time({ date }) {
       timeOfDay = "Good evening"
    }
 
-
-   console.log(location);
 
    return (
       <div className="time-container">
