@@ -21,7 +21,6 @@ export default function Time({ date }) {
                setLocation(json)
                setCity(json.data.location.city.name)
                setCountry(json.data.location.country.alpha2)
-               setIsLoading(false)
             })
       }
 
