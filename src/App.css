@@ -41,9 +41,9 @@
 
 
 .more-container {
-   height: 17rem;
+   /* height: 17rem; */
    background-color: hsla(0, 0%, 0%, 0.7);
    backdrop-filter: blur(10px);
-   margin: -2rem -1.5rem;
+   /* margin: -2rem -1.5rem; */
    padding: 2rem;
 }

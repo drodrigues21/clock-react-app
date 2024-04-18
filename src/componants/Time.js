@@ -55,10 +55,10 @@ export default function Time({ date }) {
             <h3>{timeOfDay}</h3>
          </div>
          <div className="time">
-            {isLoading ? ("Loading...") : <h1>{hour}:{minutes}</h1>}
+            {date && isLoading ? ("Loading...") : <h1>{hour}:{minutes}</h1>}
          </div>
          <div className="location">
-            {isLoading ? ("Loading...") : <h2>In {city}, {country}</h2>}
+            {date && isLoading ? ("Loading...") : <h2>In {city}, {country}</h2>}
          </div>
       </div>
    )
